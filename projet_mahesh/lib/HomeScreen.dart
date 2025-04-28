@@ -1,11 +1,12 @@
 import 'package:flutter/material.dart';
 
-class Tela2 extends StatelessWidget {
-  const Tela2({super.key});
+class HomeScreen extends StatelessWidget {
+  const HomeScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      
       backgroundColor: Colors.grey[200], // Fundo bege (mais terroso)
       drawer: Drawer(
         child: ListView(
@@ -22,7 +23,7 @@ class Tela2 extends StatelessWidget {
         ),
       ),
       appBar: AppBar(
-        backgroundColor: const Color(0xFF86a880), // Verde Escuro
+        backgroundColor: const  Color(0xFF86a880), // Verde Escuro
         elevation: 5,
         iconTheme: IconThemeData(color: Colors.white), // Amarelo
         centerTitle: true,
@@ -32,7 +33,7 @@ class Tela2 extends StatelessWidget {
             Padding(
               padding: EdgeInsets.all(12),
               child: Text(
-                'App Mahesh Tech',
+                'Mahesh Tech',
                 style: TextStyle(
                     fontSize: 20,
                     fontWeight: FontWeight.w800,
