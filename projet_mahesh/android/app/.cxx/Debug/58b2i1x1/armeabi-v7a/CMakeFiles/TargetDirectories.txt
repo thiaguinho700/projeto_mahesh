@@ -1,0 +1,2 @@
+C:/Users/47341687843/projeto_mahesh/projet_mahesh/android/app/.cxx/Debug/58b2i1x1/armeabi-v7a/CMakeFiles/edit_cache.dir
+C:/Users/47341687843/projeto_mahesh/projet_mahesh/android/app/.cxx/Debug/58b2i1x1/armeabi-v7a/CMakeFiles/rebuild_cache.dir

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:projet_mahesh/CadastroScreen.dart';
+import 'package:projet_mahesh/HomeScreen.dart';
 import 'package:projet_mahesh/LoginScreen.dart';
 
 void main() {
@@ -22,7 +23,7 @@ class _MainState extends State<Main> {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      home:Cadastroscreen(),
+      home:HomeScreen(),
     );
   }
 }

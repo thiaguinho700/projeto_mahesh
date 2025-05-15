@@ -1,9 +1,14 @@
 import 'package:flutter/material.dart';
-import 'package:projet_mahesh/SistemaDeControle.dart';
 
-class HomeScreen extends StatelessWidget {
-  const HomeScreen({super.key});
+class Sistemadecontrole extends StatefulWidget {
+  const Sistemadecontrole({super.key});
 
+  @override
+  State<Sistemadecontrole> createState() => _SistemadecontroleState();
+}
+
+class _SistemadecontroleState extends State<Sistemadecontrole> {
+  @override
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -49,26 +54,15 @@ class HomeScreen extends StatelessWidget {
           ],
         ),
       ),
-      body: Column(
-        children: [
-     
-          SizedBox(height: 30),
-          _DashboardButton(
-              icon: Icons.analytics_outlined,
-              label: 'Monitoramento',
-              onTap: () {}),
-          SizedBox(height: 30),
-          _DashboardButton(
-              icon: Icons.settings_remote_outlined,
-              label: 'Sistema de controle',
-              onTap: () => Navigator.push(
-                  context,
-                  MaterialPageRoute(
-                      builder: (context) => Sistemadecontrole()))),
-          SizedBox(height: 30),
-          _DashboardButton(
-              icon: Icons.smart_toy_outlined, label: 'Chatbot', onTap: () {}),
-        ],
+      body: Center(
+        child: Expanded(
+          child: Column(
+            children: [
+              ElevatedButton(onPressed: (){}, child: Text("Ligar")),
+              ElevatedButton(onPressed: (){}, child: Text("Desligar")),
+             ],
+          ),
+        ),
       ),
       bottomNavigationBar: BottomNavigationBar(
         currentIndex: 0,
@@ -88,46 +82,6 @@ class HomeScreen extends StatelessWidget {
             label: '',
           ),
         ],
-      ),
-    );
-  }
-}
-
-class _DashboardButton extends StatelessWidget {
-  final IconData icon;
-  final String label;
-  final VoidCallback onTap;
-
-  const _DashboardButton(
-      {required this.icon, required this.label, required this.onTap});
-
-  @override
-  Widget build(BuildContext context) {
-    return InkWell(
-      onTap: onTap,
-      child: Card(
-        shape: RoundedRectangleBorder(
-          borderRadius: BorderRadius.circular(16),
-        ),
-        elevation: 5,
-        color: Colors.green[100],
-        child: Padding(
-          padding: EdgeInsets.symmetric(vertical: 20, horizontal: 12),
-          child: Row(
-            children: [
-              Icon(
-                icon,
-                color: Colors.brown,
-                size: 40,
-              ),
-              SizedBox(width: 16),
-              Text(
-                label,
-                style: TextStyle(fontSize: 18, color: Colors.brown), // Amarelo
-              ),
-            ],
-          ),
-        ),
       ),
     );
   }
