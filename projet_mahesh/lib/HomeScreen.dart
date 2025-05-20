@@ -30,7 +30,7 @@ class HomeScreen extends StatelessWidget {
         centerTitle: true,
         title: Row(
           children: [
-            Image.asset('assets/image/logo.jpeg', height: 40),
+            Image.asset('assets/image/mahesh - logo.jpeg', height: 40),
             Padding(
               padding: EdgeInsets.all(12),
               child: Text(
