@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:projet_mahesh/ChatBot.dart';
 import 'package:projet_mahesh/SistemaDeControle.dart';
 
 class HomeScreen extends StatelessWidget {
@@ -51,7 +52,6 @@ class HomeScreen extends StatelessWidget {
       ),
       body: Column(
         children: [
-     
           SizedBox(height: 30),
           _DashboardButton(
               icon: Icons.analytics_outlined,
@@ -67,7 +67,9 @@ class HomeScreen extends StatelessWidget {
                       builder: (context) => Sistemadecontrole()))),
           SizedBox(height: 30),
           _DashboardButton(
-              icon: Icons.smart_toy_outlined, label: 'Chatbot', onTap: () {}),
+              icon: Icons.smart_toy_outlined, label: 'Chatbot', onTap: () {
+                Navigator.push(context, MaterialPageRoute(builder: (context) => ChatScreen()));
+              }),
         ],
       ),
       bottomNavigationBar: BottomNavigationBar(
