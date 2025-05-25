@@ -10,16 +10,19 @@ class HomeScreen extends StatelessWidget {
     return Scaffold(
       backgroundColor: Colors.grey[200], // Fundo bege (mais terroso)
       drawer: Drawer(
+        backgroundColor: const Color(0xff84a77f), // Verde Escuro,
         child: ListView(
           children: [
             DrawerHeader(
+              
               decoration: BoxDecoration(
                 color: const Color(0xff84a77f), // Verde Escuro
               ),
               child: Text('Menu', style: TextStyle(color: Colors.white)),
             ),
-            ListTile(title: Text('Opção 1')),
-            ListTile(title: Text('Opção 2')),
+            ListTile(title: Text('Home',style: TextStyle(fontWeight: FontWeight.w600),)),
+            ListTile(title: Text('ChatBot',style: TextStyle(fontWeight: FontWeight.w600),)),
+            ListTile(title: Text('Configurações',style: TextStyle(fontWeight: FontWeight.w600),))            
           ],
         ),
       ),
@@ -30,7 +33,7 @@ class HomeScreen extends StatelessWidget {
         centerTitle: true,
         title: Row(
           children: [
-            Image.asset('assets/image/mahesh - logo.jpeg', height: 40),
+            Image.asset('assets/image/logo - mahesh.png', height: 40),
             Padding(
               padding: EdgeInsets.all(12),
               child: Text(

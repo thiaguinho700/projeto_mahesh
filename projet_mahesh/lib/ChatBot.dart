@@ -101,18 +101,16 @@ class _ChatScreenState extends State<ChatScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        backgroundColor: const Color(0xFF86a880), // Verde Escuro
+        foregroundColor: Colors.white,
         title: ListTile(
           contentPadding: EdgeInsets.zero,
-          leading: CircleAvatar(
-            backgroundColor: Colors.white,
-            child: Icon(Icons.person),
-          ),
+          leading: Image.asset('assets/image/logoChat.png'),
           title: Text(
-            'Senai',
+            'MaheshBot',
             style: TextStyle(color: Colors.white),
           ),
-        ),
-        backgroundColor: Colors.brown,
+        )    
       ),
       body: Column(
         children: [
