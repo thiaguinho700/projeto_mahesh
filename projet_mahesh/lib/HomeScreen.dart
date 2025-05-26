@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:projet_mahesh/ChatBot.dart';
+import 'package:projet_mahesh/Monitoramente.dart';
 import 'package:projet_mahesh/SistemaDeControle.dart';
 
 class HomeScreen extends StatelessWidget {
@@ -14,15 +15,35 @@ class HomeScreen extends StatelessWidget {
         child: ListView(
           children: [
             DrawerHeader(
-              
               decoration: BoxDecoration(
                 color: const Color(0xff84a77f), // Verde Escuro
               ),
               child: Text('Menu', style: TextStyle(color: Colors.white)),
             ),
-            ListTile(title: Text('Home',style: TextStyle(fontWeight: FontWeight.w600),)),
-            ListTile(title: Text('ChatBot',style: TextStyle(fontWeight: FontWeight.w600),)),
-            ListTile(title: Text('Configurações',style: TextStyle(fontWeight: FontWeight.w600),))            
+            ListTile(
+                onTap: () => Navigator.push(context,
+                    MaterialPageRoute(builder: (context) => HomeScreen())),
+                title: Text(
+                  'Home',
+                  style: TextStyle(
+                      fontWeight: FontWeight.w600, color: Colors.white),
+                )),
+            ListTile(
+                onTap: () => Navigator.push(context,
+                    MaterialPageRoute(builder: (context) => ChatScreen())),
+                title: Text(
+                  'ChatBot',
+                  style: TextStyle(
+                      fontWeight: FontWeight.w600, color: Colors.white),
+                )),
+            ListTile(
+                onTap: () => Navigator.push(context,
+                    MaterialPageRoute(builder: (context) => ChatScreen())),
+                title: Text(
+                  'Configurações',
+                  style: TextStyle(
+                      fontWeight: FontWeight.w600, color: Colors.white),
+                ))
           ],
         ),
       ),
@@ -59,7 +80,10 @@ class HomeScreen extends StatelessWidget {
           _DashboardButton(
               icon: Icons.analytics_outlined,
               label: 'Monitoramento',
-              onTap: () {}),
+              onTap: () => Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                      builder: (context) => const Monitoramente()))),
           SizedBox(height: 30),
           _DashboardButton(
               icon: Icons.settings_remote_outlined,
@@ -70,8 +94,11 @@ class HomeScreen extends StatelessWidget {
                       builder: (context) => Sistemadecontrole()))),
           SizedBox(height: 30),
           _DashboardButton(
-              icon: Icons.smart_toy_outlined, label: 'Chatbot', onTap: () {
-                Navigator.push(context, MaterialPageRoute(builder: (context) => ChatScreen()));
+              icon: Icons.smart_toy_outlined,
+              label: 'Chatbot',
+              onTap: () {
+                Navigator.push(context,
+                    MaterialPageRoute(builder: (context) => ChatScreen()));
               }),
         ],
       ),

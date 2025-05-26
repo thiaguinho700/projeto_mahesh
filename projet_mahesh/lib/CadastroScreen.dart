@@ -57,15 +57,13 @@ class _CadastroscreenState extends State<Cadastroscreen> {
                     ),
                     ElevatedButton(
                       onPressed: () {},
-                      
                       child: Text(
                         "Cadastre-se",
                         style: TextStyle(color: Colors.white),
                       ),
                       style: ElevatedButton.styleFrom(
-                          backgroundColor: Color(0xFF86a880),
-                          
-                          ),
+                        backgroundColor: Color(0xFF86a880),
+                      ),
                     ),
                     Text("Já tem conta? Faça o login")
                   ],
