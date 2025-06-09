@@ -1,0 +1,2 @@
+C:/Users/AlunoINRB/mahesh/projeto_mahesh/projet_mahesh/android/app/.cxx/Debug/5s3f1d4q/x86/CMakeFiles/edit_cache.dir
+C:/Users/AlunoINRB/mahesh/projeto_mahesh/projet_mahesh/android/app/.cxx/Debug/5s3f1d4q/x86/CMakeFiles/rebuild_cache.dir

@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:projet_mahesh/CadastroScreen.dart';
 import 'package:projet_mahesh/HomeScreen.dart';
-import 'package:projet_mahesh/LoginScreen.dart';z
+import 'package:projet_mahesh/LoginScreen.dart';
 
 void main() {
   runApp(MaterialApp(

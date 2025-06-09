@@ -1,18 +1,19 @@
 import 'package:flutter/material.dart';
 import 'package:projet_mahesh/ChatBot.dart';
-import 'package:projet_mahesh/MonitoramentoPage.dart';
+import 'package:projet_mahesh/HomeScreen.dart';
 import 'package:projet_mahesh/SistemaDeControle.dart';
 
-class HomeScreen extends StatelessWidget {
-  const HomeScreen({super.key});
+class Monitoramentopage extends StatelessWidget {
+  const Monitoramentopage({super.key});
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.grey[200], // Fundo bege (mais terroso)
       drawer: Drawer(
+    
         backgroundColor: const Color(0xff84a77f), // Verde Escuro
- child: ListView(
+         child: ListView(
     padding: EdgeInsets.zero,
     children: [
       DrawerHeader(
@@ -90,7 +91,9 @@ class HomeScreen extends StatelessWidget {
       ),
     ],
   ),
-),
+
+    ),
+
       appBar: AppBar(
         backgroundColor: const Color(0xFF86a880), // Verde Escuro
         elevation: 5,
@@ -118,53 +121,85 @@ class HomeScreen extends StatelessWidget {
           ],
         ),
       ),
-      body: Column(
-        children: [
-          SizedBox(height: 30),
-          _DashboardButton(
-              icon: Icons.analytics_outlined,
-              label: 'Monitoramento',
-              onTap: () => Navigator.push(
-                  context,
-                  MaterialPageRoute(
-                      builder: (context) => Monitoramentopage()))),
-          SizedBox(height: 30),
-          _DashboardButton(
-              icon: Icons.settings_remote_outlined,
-              label: 'Sistema de controle',
-              onTap: () => Navigator.push(
-                  context,
-                  MaterialPageRoute(
-                      builder: (context) => Sistemadecontrole()))),
-          SizedBox(height: 30),
-          _DashboardButton(
-              icon: Icons.smart_toy_outlined,
-              label: 'Chatbot',
-              onTap: () {
-                Navigator.push(context,
-                    MaterialPageRoute(builder: (context) => ChatScreen()));
-              }),
-        ],
-      ),
-      bottomNavigationBar: BottomNavigationBar(
-        currentIndex: 0,
-        selectedItemColor: Colors.white, // Amarelo
-        backgroundColor: const Color(0xFF86a880), // Verde Escuro
-        items: [
-          BottomNavigationBarItem(
-            icon: Icon(Icons.home),
-            label: '',
-            
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.chat_rounded),
-            label: '',
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.settings),
-            label: '',
-          ),
-        ],
+      body: Padding(
+        padding: const EdgeInsets.all(16.0),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.stretch,
+          children: [
+            Text(
+              'Monitoramento Ambiental',
+              style: TextStyle(
+                fontSize: 22,
+                fontWeight: FontWeight.bold,
+              ),
+              textAlign: TextAlign.center,
+            ),
+            SizedBox(height: 20),
+
+            // Componente de pH da água
+            Card(
+              shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(12)),
+              elevation: 4,
+              color: Colors.blue[50],
+              child: ListTile(
+                leading: Icon(Icons.water_drop, color: Colors.blue, size: 30),
+                title: Text('pH da Água'),
+                subtitle: Text('Valor atual: 6.8'),
+                trailing: Icon(Icons.check_circle, color: Colors.green),
+              ),
+            ),
+            SizedBox(height: 16),
+
+            // Componente de dados do plantio
+            Card(
+              shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(12)),
+              elevation: 4,
+              color: Colors.green[50],
+              child: Padding(
+                padding: const EdgeInsets.all(16.0),
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Text(
+                      'Dados do Plantio',
+                      style: TextStyle(
+                        fontSize: 18,
+                        fontWeight: FontWeight.bold,
+                        color: Colors.green[800],
+                      ),
+                    ),
+                    SizedBox(height: 8),
+                    Row(
+                      children: [
+                        Icon(Icons.thermostat, color: Colors.orange),
+                        SizedBox(width: 8),
+                        Text('Temperatura: 24°C'),
+                      ],
+                    ),
+                    SizedBox(height: 6),
+                    Row(
+                      children: [
+                        Icon(Icons.water, color: Colors.blue),
+                        SizedBox(width: 8),
+                        Text('Umidade do Solo: 58%'),
+                      ],
+                    ),
+                    SizedBox(height: 6),
+                    Row(
+                      children: [
+                        Icon(Icons.eco, color: Colors.green),
+                        SizedBox(width: 8),
+                        Text('Status: Saudável'),
+                      ],
+                    ),
+                  ],
+                ),
+              ),
+            ),
+          ],
+        ),
       ),
     );
   }
